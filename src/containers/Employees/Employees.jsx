@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getEmployeesData } from '../redux/employeesList';
-import DownloadSpinner from '../components/downloadSpinner';
-import EmployeeCard from '../components/employeeCard/EmployeeCard'
+import { getEmployeesData } from '../../redux/employeesList';
+import {DownloadSpinner} from '../../components/downloadSpinner';
+import {EmployeeCard} from '../../components/employeeCard'
 
 import './Employees.css';
 

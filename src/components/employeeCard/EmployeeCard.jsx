@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './EmployeeCard.css';
 
-class EmployeeCard extends Component  {
+export class EmployeeCard extends Component  {
     render() { 
         const {photo, id, firstName, lastName, position} = this.props;
         return (
@@ -18,5 +18,3 @@ class EmployeeCard extends Component  {
         );
     }
 }
-
-export default EmployeeCard;
