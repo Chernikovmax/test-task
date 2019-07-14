@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { getEmployeeData } from '../../redux/employeeDetails';
+import { DownloadSpinner } from '../../components/downloadSpinner';
 
 class EmployeeDetails extends Component {
+    componentDidMount() {
+        console.log(this.props)
+        const { employeeDetailsRequest, match: { params: { employeeId } } } = this.props;
+        employeeDetailsRequest(employeeId);
+    }
+
+    componentDidUpdate() {
+        console.log(this.props.employeesList);
+    }
     render() {
         return (
             <div>
@@ -11,12 +22,12 @@ class EmployeeDetails extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    
-})
+const mapStateToProps = state => ({
+    employeeInfo: state.employeeDetails
+});
 
 const mapDispatchToProps = {
-    
+    employeeDetailsRequest: getEmployeeData,
 }
 
 

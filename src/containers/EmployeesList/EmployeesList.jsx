@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { getEmployeesData } from '../../redux/employeesList';
 import {DownloadSpinner} from '../../components/downloadSpinner';
 import {EmployeeCard} from '../../components/employeeCard';
-import {Link} from 'react-router-dom';
 
 import './EmployeesList.css';
 
 class EmployeesList extends React.Component {
 
   componentDidMount() {
-    const { employeesListRequest } = this.props;
+    console.log(this.props)
+    const {employeesListRequest} = this.props;
     employeesListRequest();
   }
 
@@ -33,6 +33,7 @@ class EmployeesList extends React.Component {
         {data.map(item => {
           return <EmployeeCard
             key={item.id}
+            employeeId={item.id}
             photo={item.photo}
             firstName={item.firstName}
             lastName={item.lastName}
