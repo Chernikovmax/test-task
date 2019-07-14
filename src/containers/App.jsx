@@ -2,17 +2,21 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import List from './Employees';
 import {store} from '../redux/configureStore';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 import './App.css';
 
 
 function App() {
   
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <Provider store={store}>
-        <List />
+        <Switch>
+          <Route path="/" component={List} exact/>
+        </Switch>
       </Provider>
-    </div>
+    </BrowserRouter>
   );
 }
 
