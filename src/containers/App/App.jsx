@@ -1,9 +1,10 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import List from '../Employees/Employees';
+import EmployeesList from '../EmployeesList/EmployeesList';
 import {store} from '../../redux/configureStore';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Header} from '../Header';
+
 
 import './App.css';
 
@@ -16,7 +17,7 @@ export function App() {
         <div>
           <Header/>
           <Switch>
-            <Route path="/" component={List} exact/>
+            <Route path="/" component={EmployeesList} exact/>
           </Switch>
         </div>
       </Provider>

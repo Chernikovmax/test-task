@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getEmployeesData } from '../../redux/employeesList';
 import {DownloadSpinner} from '../../components/downloadSpinner';
-import {EmployeeCard} from '../../components/employeeCard'
+import {EmployeeCard} from '../../components/employeeCard';
+import {Link} from 'react-router-dom';
 
-import './Employees.css';
+import './EmployeesList.css';
 
-class List extends React.Component {
+class EmployeesList extends React.Component {
 
   componentDidMount() {
     const { employeesListRequest } = this.props;
@@ -50,4 +51,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   employeesListRequest: getEmployeesData,
 }
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeesList);
