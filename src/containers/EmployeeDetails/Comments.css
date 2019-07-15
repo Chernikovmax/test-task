@@ -29,13 +29,8 @@
     padding-left: 20px;
     padding-right: 20px;
     font-weight: bold;
-    color: #82c1d4;
-}
-
-.comment__theme {
-}
-
-.comment__phone {
+    color: #fff;
+    background-color: #6383a8;
 }
 
 .comment__text {
@@ -71,4 +66,8 @@ textarea {
 
 .comment-form__text {
     resize: none;
+}
+
+.comment-form__submit-btn {
+
 }
