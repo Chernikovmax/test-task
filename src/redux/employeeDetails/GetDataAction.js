@@ -45,7 +45,7 @@ export const getEmployeeData = (employeeId) => (dispatch) => {
 
 export const postEmployeeComment = ({employeeId, title, text, phone}) => (dispatch) => {
     dispatch(postEmployeeCommentRequest());
-    fetch(`http://vm3mk.mocklab.io/comments/}`, { method: "POST", body: JSON.stringify({ employeeId, title, text, phone})})
+    fetch(`http://vm3mk.mocklab.io/comments/`, { method: "POST", body: JSON.stringify({ employeeId, title, text, phone})})
         .then(() => dispatch(postEmployeeCommentSuccess({ employeeId, title, text, phone })))
         .catch(err => dispatch(postEmployeeCommentFailure(err)))
 };
