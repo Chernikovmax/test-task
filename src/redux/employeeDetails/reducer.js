@@ -5,7 +5,7 @@ const initialState = {
     isLoaded: false,
     isFailure: false,
     error: null,
-    data: [],
+    data: {},
 }
 
 export const employeeReducer = (state = initialState, action) => {
@@ -20,7 +20,7 @@ export const employeeReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isLoaded: true,
-                data: [...action.payload],
+                data: {...action.payload},
             }
         case GET_EMPLOYEE_DATA_FAILURE: {
             return {

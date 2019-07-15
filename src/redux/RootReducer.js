@@ -4,5 +4,5 @@ import {employeeReducer} from './employeeDetails/';
 
 export const rootReducer = combineReducers({
     employeesList: employeesReducer,
-    employeeDetail: employeeReducer,
+    employeeDetails: employeeReducer,
 });
