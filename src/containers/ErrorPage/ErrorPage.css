@@ -1,0 +1,27 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.error-page__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+}
+
+.error-page__error-number {
+    color: #fff;
+    font-size: 80px;
+}
+
+.error-page__title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}

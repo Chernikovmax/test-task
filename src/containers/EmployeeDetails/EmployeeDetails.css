@@ -1,0 +1,25 @@
+.employee-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.employee-details__photo {
+    height: 170px;
+    width: auto;
+    margin-right: 50px;
+}
+
+.employee-details__text {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.employee-details__line {
+    size: 2px;
+    color: #6383a8;
+}

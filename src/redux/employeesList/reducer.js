@@ -1,6 +1,6 @@
 import {GET_EMPLOYEES_SUCCESS, GET_EMPLOYEES_FAILURE, GET_EMPLOYEES_REQUEST} from './GetDataAction';
 
-const initState = {
+const initialState = {
     isLoading: false,
     isLoaded: false,
     isFailure: false,
@@ -8,11 +8,11 @@ const initState = {
     data: [],
 }
 
-export const employeesReducer = (state = initState, action) => {
+export const employeesReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_EMPLOYEES_REQUEST:
             return {
-                ...initState,
+                ...initialState,
                 isLoading: true,
             }
         case GET_EMPLOYEES_SUCCESS:
@@ -22,14 +22,14 @@ export const employeesReducer = (state = initState, action) => {
                 isLoaded: true,
                 data: [...action.payload],
             }
-        case GET_EMPLOYEES_FAILURE: {
+        case GET_EMPLOYEES_FAILURE: 
             return {
                 ...state,
                 isLoading: false,
                 isFailure: true,
                 error: action.payload
             }
-        }
+        
         default:
             return state;
     }

@@ -1,0 +1,133 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.comments__title {
+    border-bottom: 2px solid #6383a8;
+    width: 80vw;
+    min-width: 600px;
+    text-align: center;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    min-width: 600px;
+    background-color: inherit;
+    border: 2px solid #6383a8;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.comment__header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6383a8;
+}
+
+.comment__text {
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    margin: 0;
+    padding: 5px 20px;
+    color: #000;
+}
+
+.comment-form-wrapper {
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment-form__inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: calc(80% - 120px);
+}   
+
+.comment-form__submit-btn {
+    border: none;
+    border-left: 2px solid #fff;
+    border-radius: 0 10px 10px 0;
+    width: 120px;
+    background-color:#6383a8;   
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.comment-form__theme-input {
+    border-top-left-radius:  10px;
+    border-bottom: 1    px solid gray;
+    width: 70%;
+    height: 20px;
+    padding-left: 20px;
+}
+
+.comment-form__phone-input {
+    border-bottom: 1    px solid gray;
+    width: 70%;
+    height: 20px;
+    padding-left: 20px;
+}
+
+.comment-form__text-input {
+    border-bottom-left-radius: 10px;
+    padding-left: 20px;
+    font-size: 16px;
+    width: 70%;
+    border: none;
+    padding-top: 5px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #6383a8; 
+    border-bottom: 1px solid gray;
+}
+
+.input-wrapper:first-of-type {
+    border-top-left-radius: 10px;
+    color: #fff;
+}
+.input-wrapper:last-of-type {
+    border-bottom-left-radius: 10px;
+}
+
+.comment-form__requirements {
+    font-size: 10px; 
+    font-weight: 600;
+    color: red;
+    padding-left: 5px;
+}

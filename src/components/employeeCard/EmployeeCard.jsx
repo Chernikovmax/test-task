@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './EmployeeCard.css';
 
 export class EmployeeCard extends Component  {
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() { 
-        const {photo, id, firstName, lastName, position} = this.props;
+        const { photo, employeeId, firstName, lastName, position} = this.props;
         return (
-            <div key={id} className="employee">
+            <Link to={`/employee-details/${employeeId}`} className="employee">
                 <img className="employee__photo" src={photo} alt=""></img>
                 <div className="employee__description">
                     <span className="employee__text">Имя: {firstName}</span>
@@ -14,7 +19,7 @@ export class EmployeeCard extends Component  {
                     <hr className="employee__line" />
                     <span className="employee__text">Должность: {position}</span>
                 </div>
-            </div>
+            </Link>
         );
     }
 }
