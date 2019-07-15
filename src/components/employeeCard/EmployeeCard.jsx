@@ -8,7 +8,7 @@ export class EmployeeCard extends Component  {
     }
 
     render() { 
-        const { photo, employeeId, firstName, lastName, position, comments} = this.props;
+        const { photo, employeeId, firstName, lastName, position} = this.props;
         return (
             <Link to={`/employee-details/${employeeId}`} className="employee">
                 <img className="employee__photo" src={photo} alt=""></img>
@@ -18,9 +18,6 @@ export class EmployeeCard extends Component  {
                     <span className="employee__text">Фамилия: {lastName}</span>
                     <hr className="employee__line" />
                     <span className="employee__text">Должность: {position}</span>
-                </div>
-                <div className="comments">
-                    {/* {comments} */}
                 </div>
             </Link>
         );

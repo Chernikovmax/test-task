@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getEmployeeData } from '../../redux/employeeDetails';
+import { postEmployeeComment } from '../../redux/employeeDetails';
 import { DownloadSpinner } from '../../components/downloadSpinner';
+import { Comments } from './Comments';
 import './EmployeeDetails.css';
 
 class EmployeeDetails extends Component {
@@ -14,6 +16,12 @@ class EmployeeDetails extends Component {
     componentDidUpdate() {
         console.log(this.props.employeeInfo);
     }
+
+    handleCommentAdding = (comment) => {
+        const { postEmployeeComment, match: { params: { employeeId } } } = this.props;
+        postEmployeeComment({ employeeId, ...comment });
+    }
+
     render() {
         const { employeeInfo: { isLoaded, data } } = this.props;
 
@@ -24,41 +32,33 @@ class EmployeeDetails extends Component {
             </div>
         );
 
+        console.log(this.handleCommentAdding)
+
         return (
             <div>
                 <div className="employee-details">
                     <img className="employee-details__photo" src={data.photo} alt=""></img>
                     <div className="employee-details__description">
                         <span className="employee-details__text">Имя: {data.firstName}</span>
-                        <hr />
+                        <hr className="employee-details__line" />
                         <span className="employee-details__text">Фамилия: {data.lastName}</span>
-                        <hr />
+                        <hr className="employee-details__line" />
                         <span className="employee-details__text">Должность: {data.position}</span>
-                        <hr />
+                        <hr className="employee-details__line" />
                         <section className="employee-details__text">
                             Адрес: {data.address.postalCode}, г.{data.address.city}, {data.address.streetAddress}
                         </section>
-                        <hr />
+                        <hr className="employee-details__line" />
                     </div>
                 </div>
-                <div className="comments">
-                    {/* {comments} */}
-                </div>
+                <Comments
+                    comments={data.comments}
+                    onCommentAdded={this.handleCommentAdding}
+                />
             </div>
         );
     }
 }
-
-{/* {data.map(item => {
-                    return <EmployeeCard
-                        key={item.id}
-                        employeeId={item.id}
-                        photo={item.photo}
-                        firstName={item.firstName}
-                        lastName={item.lastName}
-                        position={item.position}
-                    />
-                })} */}
 
 const mapStateToProps = state => ({
     employeeInfo: state.employeeDetails
@@ -66,6 +66,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     employeeDetailsRequest: getEmployeeData,
+    postEmployeeComment: postEmployeeComment,
 }
 
 

@@ -22,14 +22,14 @@ export const employeesReducer = (state = initialState, action) => {
                 isLoaded: true,
                 data: [...action.payload],
             }
-        case GET_EMPLOYEES_FAILURE: {
+        case GET_EMPLOYEES_FAILURE: 
             return {
                 ...state,
                 isLoading: false,
                 isFailure: true,
                 error: action.payload
             }
-        }
+        
         default:
             return state;
     }
