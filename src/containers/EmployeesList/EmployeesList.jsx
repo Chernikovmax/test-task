@@ -1,21 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getEmployeesData } from '../../redux/employeesList';
-import {DownloadSpinner} from '../../components/downloadSpinner';
-import {EmployeeCard} from '../../components/employeeCard';
+import { DownloadSpinner } from '../../components/downloadSpinner';
+import { EmployeeCard } from '../../components/employeeCard';
 
 import './EmployeesList.css';
 
 class EmployeesList extends React.Component {
 
   componentDidMount() {
-    console.log(this.props)
-    const {employeesListRequest} = this.props;
+    const { employeesListRequest } = this.props;
     employeesListRequest();
-  }
-
-  componentDidUpdate() {
-    console.log(this.props.employeesList);
   }
 
   render() {
