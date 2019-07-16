@@ -17,9 +17,12 @@
     font-size: 20px;
     margin-right: 10px;
     margin-left: 10px;
+    padding-left: 10px;
+    border-bottom: 2px solid #6383a8;
 }
 
-.employee-details__line {
-    size: 2px;
-    color: #6383a8;
+.employee-details__description {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }

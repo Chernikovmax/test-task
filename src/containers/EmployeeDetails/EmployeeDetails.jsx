@@ -82,15 +82,11 @@ class EmployeeDetails extends Component {
                     <img className="employee-details__photo" src={data.photo} alt=""></img>
                     <div className="employee-details__description">
                         <span className="employee-details__text">Имя: {data.firstName}</span>
-                        <hr className="employee-details__line" />
                         <span className="employee-details__text">Фамилия: {data.lastName}</span>
-                        <hr className="employee-details__line" />
                         <span className="employee-details__text">Должность: {data.position}</span>
-                        <hr className="employee-details__line" />
                         <section className="employee-details__text">
                             Адрес: {data.address.postalCode}, г.{data.address.city}, {data.address.streetAddress}
                         </section>
-                        <hr className="employee-details__line" />
                     </div>
                 </div>
                 <Comments

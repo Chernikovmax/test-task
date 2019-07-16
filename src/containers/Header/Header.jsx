@@ -6,7 +6,6 @@ export function Header() {
     return (
         <div className="header-wrapper">
             <Navigation/>
-            <div>Добавить сотрудника</div>
         </div>
     );
 }
