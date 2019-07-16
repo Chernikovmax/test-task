@@ -1,0 +1,29 @@
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    margin-bottom: 40px;
+    background-color: #54576d;
+}
+
+.slides-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.slider-switch-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    width: 43px;
+    height: 43px;
+}
+
+.slider-switch-btn:hover {
+    background: #fff;
+}
