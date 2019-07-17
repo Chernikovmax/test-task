@@ -42,7 +42,7 @@ export default class CommentForm extends Component {
                                     <Field name="phone" validate={composeValidators(required, checkMobNumber)}>
                                         {({ input, meta }) => (
                                             <div className="input-wrapper">
-                                                <span className="input-title">Номер мобильного тлеефона (без 8):</span>
+                                                <span className="input-title">Номер мобильного телефона (без 8):</span>
                                                 <input {...input}
                                                     type="tel"
                                                     className={`comments-form__phone-input ${meta.error && meta.touched && "comments-form__input--reqiured"}`}
