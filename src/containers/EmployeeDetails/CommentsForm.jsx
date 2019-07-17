@@ -16,61 +16,64 @@ export default class CommentForm extends Component {
         const { onCommentAdded } = this.props;
 
         return (
-            <div className="comment-form-wrapper">
-                <Form
-                    onSubmit={onCommentAdded}
-                    render={({ handleSubmit, form, submitting }) => (
-                        <form
-                            onSubmit={handleSubmit}
-                            className="comment-form"
-                        >
-                            <section className="comment-form__inputs-wrapper">
-                                <Field name="title" validate={composeValidators(required, checkTheme)}>
-                                    {({ input, meta }) => (
-                                        <div className="input-wrapper">
-                                            <input {...input}
-                                                type="text"
-                                                placeholder="Тема комментария:"
-                                                className="comment-form__theme-input"
-                                            />
-                                            {meta.error && meta.touched && <span className="comment-form__requirements">{meta.error}</span>}
-                                        </div>
-                                    )}
-                                </Field>
-                                <Field name="phone" validate={composeValidators(required, checkMobNumber)}>
-                                    {({ input, meta }) => (
-                                        <div className="input-wrapper">
-                                            <input {...input}
-                                                type="tel"
-                                                placeholder="Моб. № (без +7):"
-                                                className="comment-form__phone-input"
-                                            />
-                                            {meta.error && meta.touched && <span className="comment-form__requirements">{meta.error}</span>}
-                                        </div>
-                                    )}
-                                </Field>
-                                <Field name="text" validate={required}>
-                                    {({ input, meta }) => (
-                                        <div className="input-wrapper">
-                                            <textarea {...input}
-                                                name="comment-text"
-                                                className="comment-form__text-input"
-                                                placeholder="Ваш комментарий:"
-                                            />
-                                            {meta.error && meta.touched && <span className="comment-form__requirements">{meta.error}</span>}
-                                        </div>
-                                    )}
-                                </Field>
-                            </section>
-                            <button
-                                disabled={submitting}
-                                className="comment-form__submit-btn"
+            <div className="centering-wrapper">
+                <div className="comments-form-wrapper">
+                    <span className="comments-form-title">Оставьте комментарий</span>
+                    <Form
+                        onSubmit={onCommentAdded}
+                        render={({ handleSubmit, form, submitting }) => (
+                            <form
+                                onSubmit={handleSubmit}
+                                className="comments-form"
                             >
-                                Разместить
+                                <section className="comments-form__inputs-wrapper">
+                                    <Field name="title" validate={composeValidators(required, checkTheme)}>
+                                        {({ input, meta }) => (
+                                            <div className="input-wrapper">
+                                                <span className="input-title">Тема комментария:</span>
+                                                <input {...input}
+                                                    type="text"
+                                                    className={`comments-form__theme-input ${meta.error && meta.touched && "comments-form__input--reqiured"}`}
+                                                />
+                                                {meta.error && meta.touched && <span className="comments-form__requirements">{meta.error}</span>}
+                                            </div>
+                                        )}
+                                    </Field>
+                                    <Field name="phone" validate={composeValidators(required, checkMobNumber)}>
+                                        {({ input, meta }) => (
+                                            <div className="input-wrapper">
+                                                <span className="input-title">Номер мобильного тлеефона (без 8):</span>
+                                                <input {...input}
+                                                    type="tel"
+                                                    className={`comments-form__phone-input ${meta.error && meta.touched && "comments-form__input--reqiured"}`}
+                                                />
+                                                {meta.error && meta.touched && <span className="comments-form__requirements">{meta.error}</span>}
+                                            </div>
+                                        )}
+                                    </Field>
+                                    <Field name="text" validate={required}>
+                                        {({ input, meta }) => (
+                                            <div className="input-wrapper">
+                                                <span className="input-title">Текст комментария:</span>
+                                                <textarea {...input}
+                                                    name="comment-text"
+                                                    className={`comments-form__text-input ${meta.error && meta.touched && "comments-form__input--reqiured"}`}
+                                                />
+                                                {meta.error && meta.touched && <span className="comments-form__requirements">{meta.error}</span>}
+                                            </div>
+                                        )}
+                                    </Field>
+                                </section>
+                                <button
+                                    disabled={submitting}
+                                    className="comments-form__submit-btn"
+                                >
+                                    Разместить
                             </button>
-                        </form>
-                    )}
-                />
+                            </form>
+                        )}
+                    />
+                </div>
             </div>
         );
     }
