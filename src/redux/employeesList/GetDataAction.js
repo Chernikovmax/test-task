@@ -4,7 +4,7 @@ export const GET_EMPLOYEES_REQUEST = 'GET_EMPLOYEES_REQUEST';
 
 const getEmployeesSuccess = (data) => ({
     type: GET_EMPLOYEES_SUCCESS,
-    payload: data.employees,
+    payload: data,
 });
 
 const getEmployeesFailure = (err) => ({
@@ -18,7 +18,7 @@ const getEmployeesRequest = () => ({
 
 export const getEmployeesData = () => (dispatch) => {
     dispatch(getEmployeesRequest());
-    fetch('http://vm3mk.mocklab.io/employees/')
+    fetch('http://localhost:3000/employees/')
          .then(data => data.json())
          .then(data => dispatch(getEmployeesSuccess(data)))
          .catch(err => dispatch(getEmployeesFailure(err)))

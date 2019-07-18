@@ -16,6 +16,7 @@ export const employeesReducer = (state = initialState, action) => {
                 isLoading: true,
             }
         case GET_EMPLOYEES_SUCCESS:
+            console.log(action.payload);
             return {
                 ...state,
                 isLoading: false,
