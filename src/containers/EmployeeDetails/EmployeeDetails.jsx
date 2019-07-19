@@ -36,8 +36,13 @@ class EmployeeDetails extends Component {
     }
 
     handleCommentAdding = (comment) => {
-        const { postEmployeeComment, match: { params: { employeeId } } } = this.props;
-        postEmployeeComment({ employeeId, ...comment });
+        const { 
+            postEmployeeComment, 
+            employeeInfo: { data }, 
+            match: { params: { employeeId } } 
+        } = this.props;
+        
+        postEmployeeComment(employeeId, { ...data, comments: [...data.comments, comment] });
     }
 
     getEmployeesCards() {

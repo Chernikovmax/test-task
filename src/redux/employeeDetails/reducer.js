@@ -47,7 +47,7 @@ export const employeeReducer = (state = initialState, action) => {
                 isCommentFetching: false,
                 data: {
                     ...state.data,
-                    comments: [...state.data.comments, action.payload]
+                    comments: [...action.payload.comments]
                 }
 
             }
